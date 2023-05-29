@@ -27,7 +27,7 @@ form.addEventListener('submit', (e)=>{
      elemeto.previousElementSibling.classList.add('label-error')
      elemeto.classList.add('input-error')
 }
-    if(regEx3.test(yearInput.value) && regEx2.test(monthInput.value) && regEx1.test(dayInput.value)){
+    if(regEx3.test(Number(yearInput.value)) && regEx2.test(Number(monthInput.value)) && regEx1.test(Number(dayInput.value))){
         const fecha = `${yearInput.value}-${monthInput.value}-${dayInput.value}`
         const fechaNacimiento = new Date(fecha.toString())
         const fechaActual = new Date();
@@ -52,29 +52,29 @@ form.addEventListener('submit', (e)=>{
 
     
     
-        else if(regEx1.test(dayInput.value)==false){
+        else if(regEx1.test(Number(dayInput.value))==false){
             addClases(dayInput)
         }
-        else if(regEx1.test(dayInput.value)){
+        else if(regEx1.test(Number(dayInput.value))){
             removeClases(dayInput)
             }
     
     
-        if(regEx2.test(monthInput.value)==false){
+        if(regEx2.test(Number(monthInput.value))==false){
             addClases(monthInput)
             
         }
-        else if(regEx2.test(monthInput.value)){
+        else if(regEx2.test(Number(monthInput.value))){
             removeClases(monthInput)
             
         }
-         if(regEx3.test(yearInput.value)==false){
+         if(regEx3.test(Number(yearInput.value))==false){
             addClases(yearInput)
         }
-        else if(regEx3.test(yearInput.value)){
+        else if(regEx3.test(Number(yearInput.value))){
             removeClases(yearInput)
         }
-    if(regEx3.test(yearInput.value)==false || regEx2.test(monthInput.value)==false || regEx1.test(dayInput.value)==false){
+    if(regEx3.test(Number(yearInput.value))==false || regEx2.test(Number(monthInput.value))==false || regEx1.test(Number(dayInput.value))==false){
         textElement.forEach(element => element.firstElementChild.textContent = '--')
         
     }
